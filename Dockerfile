@@ -1,11 +1,11 @@
 FROM registry.access.redhat.com/rhel7-atomic:latest
 
 LABEL name="instana-agent" \
-    vendor="Instana Inc." \
-    version="1.0.2" \
-    release="1" \
-    summary="Instana APM agent" \
-    description="Instana APM agent" \
+      vendor="Instana Inc." \
+      version="1.0.2" \
+      release="1" \
+      summary="Instana APM agent" \
+      description="Instana APM agent"
 
 ENV LANG=C.UTF-8 \
     INSTANA_AGENT_KEY="" \
@@ -28,7 +28,8 @@ RUN curl -sSL https://packages.instana.io/Instana.gpg -o /tmp/Instana.gpg && \
     rm -rf /tmp/* /etc/yum.repos.d/Instana-Agent.repo /etc/yum.repos.d/Docker.repo && \
     microdnf clean all
 
-ADD licenses/* /licenses
+ADD licenses/* /licenses \
+    help.1 /help.1
 
 ADD gomplate /usr/bin/gomplate
 ADD docker /usr/bin/docker
