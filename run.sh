@@ -56,7 +56,7 @@ cat /root/com.instana.agent.main.sender.Backend.cfg.tmpl | gomplate > \
 echo "origin = public_docker" >> /opt/instana/agent/etc/instana/com.instana.agent.bootstrap.AgentBootstrap.cfg
 
 if [[ "${INSTANA_AGENT_HTTP_LISTEN}" != "" ]]; then
-  echo "http.listen = ${INSTANA_AGENT_HTTP_LISTEN}" >> /opt/instana/agent/etc/instana/com.instana.agent.main.config.Agent.cfg
+  echo -e "\nhttp.listen = ${INSTANA_AGENT_HTTP_LISTEN}" >> /opt/instana/agent/etc/instana/com.instana.agent.main.config.Agent.cfg
 fi
 
 if [ -d /host/proc ]; then
