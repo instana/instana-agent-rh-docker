@@ -6,13 +6,13 @@
   <servers>
     <server>
       <id>features</id>
-      <username>agent</username>
-      <password>APBSjZhLhjeGZ9uq</password>
+      <username>_</username>
+      <password>{{ getenv "INSTANA_AGENT_KEY" }}</password>
     </server>
     <server>
       <id>shared</id>
-      <username>agent</username>
-      <password>APBSjZhLhjeGZ9uq</password>
+      <username>_</username>
+      <password>{{ getenv "INSTANA_AGENT_KEY" }}</password>
     </server>
     <!-- for mirrors requiring auth
     <server>
